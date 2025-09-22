@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PageWrapper from "../components/transition";
+import { FaFacebook, FaLinkedin, FaFacebookMessenger } from "react-icons/fa";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -28,6 +29,22 @@ function Contact() {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">
             Get in <span className="text-purple-700">Touch</span>
           </h1>
+
+          {/* Social Icons under header */}
+          <div className="flex justify-center gap-5 mb-8">
+            <a href="https://facebook.com/yourprofile" target="_blank" rel="noreferrer">
+              <FaFacebook className="w-7 h-7 text-blue-600 hover:text-blue-800" />
+            </a>
+            <a href="https://m.me/yourprofile" target="_blank" rel="noreferrer">
+              <FaFacebookMessenger className="w-7 h-7 text-purple-600 hover:text-purple-800" />
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">
+              <FaLinkedin className="w-7 h-7 text-blue-700 hover:text-blue-900" />
+            </a>
+          </div>
+          <p className="text-gray-600 text-center mb-5 leading-relaxed">
+            or
+          </p>
           <p className="text-gray-600 text-center mb-10 leading-relaxed">
             Fill out the form below and I’ll get back to you as soon as possible.
           </p>
