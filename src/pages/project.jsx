@@ -23,7 +23,7 @@ function ProjectPage() {
     <PageWrapper>
     <div className="min-h-screen text-gray-800">
       {/* Hero Section */}
-      <header className="text-white py-30 px-6 text-center">
+      <header className="text-white py-25 px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">My Projects</h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto">
           Explore some of the projects I’ve been working on.

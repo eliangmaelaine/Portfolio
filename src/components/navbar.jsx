@@ -33,7 +33,7 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to="/"
+              to="/contact"
               className="relative group"
             >
               Contact
@@ -91,7 +91,7 @@ function Navbar() {
             </li>
             <li>
               <Link
-                to="/"
+                to="/contact"
                 className="hover:text-blue-600 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
