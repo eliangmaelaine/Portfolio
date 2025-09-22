@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-gray-100 text-gray-600 py-6 mt-12">
+    <footer className="bg-gray-100 text-gray-600 py-6">
       <p className="text-center text-sm">
         © {new Date().getFullYear()}{" "}
         <span className="font-semibold text-gray-800">
