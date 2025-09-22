@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Homepage() {
   return (
     <PageWrapper>
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-white px-6">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-white px-6 pt-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
           {/* Profile Image */}
