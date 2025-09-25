@@ -34,7 +34,7 @@ function PortfolioPage() {
           <p className="text-gray-700 text-lg leading-relaxed text-justify">
             This is the link to the project repository: 
 
-            <a href="maelaineeliang.vercel.app" className="text-purple-700 underline"> maelaineeliang.vercel.app</a>
+            <a href="maelaineeliang.vercel.apphttps://github.com/eliangmaelaine/Portfolio" className="text-purple-700 underline">https://github.com/eliangmaelaine/Portfolio</a>
         </p>
         </div>
       </div>
