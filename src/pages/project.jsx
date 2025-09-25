@@ -1,19 +1,25 @@
 import PageWrapper from '../components/transition';
+import { Link } from "react-router-dom";
 
 const projects = [
   {
     title: 'Portfolio Website',
     description: 'A personal portfolio website built to showcase my skills and experience.',
-    link: '#',
+    link: '/portfolio',
   },
   {
     title: 'EcoBohol: Mangrove Information System',
     description: 'An information system designed to support mangrove conservation efforts in Bohol.',
-    link: '#',
+    link: '/ecobohol',
   },
   {
     title: 'Motorcycle Rental System',
     description: 'A system for managing motorcycle rentals with user-friendly booking features.',
+    link: '#',
+  },
+  {
+    title: 'Budget Tracker',
+    description: 'A web application to help users track their expenses and manage their budget effectively.',
     link: '#',
   },
 ];
@@ -36,7 +42,7 @@ function ProjectPage() {
 
         {/* Projects Grid */}
         <main className="py-12 px-6 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
             {projects.map((project, index) => (
               <div
                 key={index}
@@ -53,8 +59,8 @@ function ProjectPage() {
                 
                 {/* Button aligned right */}
                 <div className="mt-auto flex justify-end">
-                  <a
-                    href={project.link}
+                  <Link
+                    to={project.link}
                     className="inline-flex items-center gap-2 w-40 justify-center px-5 py-3 
                               bg-gradient-to-r from-purple-700 to-purple-900 
                               text-white font-medium rounded-xl shadow-md 
@@ -63,7 +69,7 @@ function ProjectPage() {
                               transition-all duration-300 ease-in-out"
                   >
                     View Project →
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

@@ -13,7 +13,7 @@ function Homepage() {
             <img
               src={ProfileImage}
               alt="Profile"
-              className="rounded-3xl shadow-xl w-72 md:w-96 object-cover border-4 border-white"
+              className="rounded-4xl shadow-xl w-72 md:w-96 object-cover border-4 border-white"
             />
           </div>
 
@@ -38,7 +38,7 @@ function Homepage() {
               </Link>
               <Link
                 to="/contact"
-                className="px-6 py-3 bg-white border border-purple-700 text-purple-700 font-medium rounded-xl shadow-sm hover:bg-purple-50 transition-all duration-300"
+                className="px-6 py-3 bg-white border border-purple-700 text-purple-700 font-medium rounded-xl shadow-sm hover:bg-purple-100 transition-all duration-300"
               >
                 Contact Me
               </Link>
