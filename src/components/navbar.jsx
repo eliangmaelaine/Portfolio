@@ -5,7 +5,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-10">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <div className="text-2xl font-extrabold tracking-wide text-purple-900 cursor-pointer hover:scale-105 transition-transform">
           <>

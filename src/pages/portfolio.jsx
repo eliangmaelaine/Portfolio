@@ -7,7 +7,7 @@ function PortfolioPage() {
   return (
     <PageWrapper>
       {/* Back Button */}
-      <div className="absolute top-20 left-6 z-50">
+      <div className="absolute pt-8 ml-8">
         <button
           onClick={() => navigate(-1)}
           className="flex items-center gap-2 px-5 py-3 bg-purple-700 text-white 
