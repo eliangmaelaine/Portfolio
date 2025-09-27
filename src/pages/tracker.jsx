@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import PageWrapper from "../components/transition";
 
-function PortfolioPage() {
-  const navigate = useNavigate();
+function Tracker() {
+const navigate = useNavigate();
 
   return (
     <PageWrapper>
@@ -25,27 +25,15 @@ function PortfolioPage() {
       >
         <div className="max-w-4xl text-center md:text-left">
           <h2 className="text-4xl md:text-5xl font-extrabold text-purple-700 mb-8 text-center">
-            My Portfolio Project
+            Budget Tracker
           </h2>
 
           <p className="text-gray-700 text-xl leading-relaxed mb-6 text-justify">
-            About the portfolio project, this website is built using React, a popular JavaScript library for building user interfaces. 
-            It features a clean and modern design with a focus on usability and accessibility.
-            The site is fully responsive, ensuring a seamless experience across all devices, from desktops to mobile phones.
+            This project...
           </p>
 
           <p className="text-gray-700 text-xl leading-relaxed text-justify">
             <span className="font-semibold">Project Links:</span>
-            <br />
-            Live site:{" "}
-            <a 
-              href="https://maelaineeliang.vercel.app" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-purple-800 font-medium underline text-xl"
-            >
-              maelaineeliang.vercel.app
-            </a>
             <br />
             GitHub repo:{" "}
             <a 
@@ -62,5 +50,4 @@ function PortfolioPage() {
     </PageWrapper>
   );
 }
-
-export default PortfolioPage;
+export default Tracker;

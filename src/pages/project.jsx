@@ -15,12 +15,12 @@ const projects = [
   {
     title: 'Motorcycle Rental System',
     description: 'A system for managing motorcycle rentals with user-friendly booking features.',
-    link: '#',
+    link: '/rental',
   },
   {
     title: 'Budget Tracker',
     description: 'A web application to help users track their expenses and manage their budget effectively.',
-    link: '#',
+    link: '/tracker',
   },
 ];
 
