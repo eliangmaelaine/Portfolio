@@ -9,7 +9,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <div className="text-2xl font-extrabold tracking-wide text-purple-900 cursor-pointer hover:scale-105 transition-transform">
           <>
-            <Link to="/">MyPortfolio</Link>
+            <Link to="/">Elaine.El</Link>
           </>
         </div>
         <ul className="hidden md:flex items-center space-x-10 text-purple-900 font-medium">

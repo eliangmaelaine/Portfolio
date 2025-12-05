@@ -1,6 +1,8 @@
 import { useState } from "react";
 import PageWrapper from "../components/transition";
 import { FaFacebook, FaLinkedin, FaFacebookMessenger } from "react-icons/fa";
+import { db } from "../firebase";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -9,28 +11,47 @@ function Contact() {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // null | "success" | "error"
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you for reaching out! I’ll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
+    setLoading(true);
+    setStatus(null);
+
+    try {
+      await addDoc(collection(db, "messages"), {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        createdAt: serverTimestamp(),
+      });
+
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Firestore Error:", error.code, error.message);
+      setStatus("error");
+    }
+
+    setLoading(false);
   };
 
   return (
     <PageWrapper>
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-white px-6 pt-24 pb-16">
         <div className="w-full max-w-3xl bg-white p-10 rounded-3xl shadow-xl border border-gray-100 text-center">
-          
+
           {/* Header */}
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Get in <span className="text-purple-700">Touch</span>
           </h1>
 
-          {/* Social Icons under header */}
+          {/* Social Icons */}
           <div className="flex justify-center gap-6 mb-6">
             <a href="https://facebook.com/yourprofile" target="_blank" rel="noreferrer">
               <FaFacebook className="w-8 h-8 text-blue-600 hover:text-blue-800 transition-colors" />
@@ -47,6 +68,14 @@ function Contact() {
           <p className="text-gray-600 mb-8 leading-relaxed">
             Fill out the form below and I’ll get back to you as soon as possible.
           </p>
+
+          {/* Status Messages */}
+          {status === "success" && (
+            <p className="mb-4 text-green-600 font-medium">✅ Your message has been sent successfully!</p>
+          )}
+          {status === "error" && (
+            <p className="mb-4 text-red-600 font-medium">❌ Failed to send message. Please try again.</p>
+          )}
 
           {/* Contact Form */}
           <form onSubmit={handleSubmit} className="space-y-6 text-left">
@@ -91,9 +120,12 @@ function Contact() {
 
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-purple-700 text-white font-medium rounded-xl shadow-md hover:bg-purple-800 hover:shadow-lg transition-all duration-300"
+              disabled={loading || !formData.name || !formData.email || !formData.message}
+              className={`w-full px-6 py-3 bg-purple-700 text-white font-medium rounded-xl shadow-md hover:bg-purple-800 hover:shadow-lg transition-all duration-300 ${
+                (loading || !formData.name || !formData.email || !formData.message) && "opacity-50 cursor-not-allowed"
+              }`}
             >
-              Send Message
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </form>
 
@@ -106,11 +138,10 @@ function Contact() {
               width="100%"
               height="350"
               style={{ border: 0, borderRadius: "12px" }}
-              allowFullScreen=""
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
+
         </div>
       </div>
     </PageWrapper>
